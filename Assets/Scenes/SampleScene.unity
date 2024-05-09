@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8f95074f2fef149ba9c37249a4987a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 1133230038}
+  _tumbler: {fileID: 1133230038}
   _text: {fileID: 1312284178}
 --- !u!114 &1133230038
 MonoBehaviour:

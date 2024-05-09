@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class Tumbler : MonoBehaviour
 {
     public event Action Switching;
 
-    public bool IsMouseClick { get; private set; }
+    public bool IsOn { get; private set; }
 
     private void Update()
     {
@@ -18,9 +18,6 @@ public class Button : MonoBehaviour
 
     private void Toggle()
     {
-        if (IsMouseClick)
-            IsMouseClick = false;
-        else
-            IsMouseClick = true;
+        IsOn = !IsOn;
     }
 }

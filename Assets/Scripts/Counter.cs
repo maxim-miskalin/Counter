@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] private Button _button;
+    [SerializeField] private Tumbler _tumbler;
     [SerializeField] private TextMeshProUGUI _text;
 
     private float _delay = 0.5f;
@@ -13,24 +13,24 @@ public class Counter : MonoBehaviour
     private Coroutine _coroutine;
     private WaitForSeconds _wait;
 
-    void Start()
+    private void Start()
     {
         ShowCountUp(_count);
     }
 
     private void OnEnable()
     {
-        _button.Switching += WhenSwitching;
+        _tumbler.Switching += WhenSwitching;
     }
 
     private void OnDisable()
     {
-        _button.Switching -= WhenSwitching;
+        _tumbler.Switching -= WhenSwitching;
     }
 
     private void WhenSwitching()
     {
-        if(_button.IsMouseClick)
+        if(_tumbler.IsOn)
         {
             _coroutine = StartCoroutine(CountUp());
         }
@@ -47,7 +47,7 @@ public class Counter : MonoBehaviour
     {
         _wait = new WaitForSeconds(_delay);
 
-        while (_button.IsMouseClick)
+        while (_tumbler.IsOn)
         {
             _count++;
             ShowCountUp(_count);
